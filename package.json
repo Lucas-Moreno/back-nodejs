@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/Lucas-Moreno/back-nodejs#readme",
   "dependencies": {
+    "@nestjs/mongoose": "^9.2.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.0.0",
+    "mongoose": "^6.9.0",
     "nodemon": "^2.0.20",
     "process": "^0.11.10"
   },
