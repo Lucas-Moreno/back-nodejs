@@ -16,6 +16,9 @@ COPY . .
 # Copy env
 # COPY .env .
 
+# Install TypeScript
+RUN npm install -g typescript
+
 # Build the application using TypeScript
 RUN npm run build
 
