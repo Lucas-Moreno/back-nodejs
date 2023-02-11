@@ -30,4 +30,4 @@ EXPOSE 3000
 ENV MONGO_URI=$MONGO_URI
 
 # Run the application
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "docker" ]
