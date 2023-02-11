@@ -18,6 +18,7 @@ COPY . .
 
 # Install TypeScript
 RUN npm install -g typescript
+RUN npm install -g ts-node
 
 # Build the application using TypeScript
 RUN npm run build
