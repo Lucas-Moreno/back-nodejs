@@ -18,7 +18,7 @@ jobs:
           ARCHI_TOKEN: ${{ secrets.ARCHI_TOKEN }}
         run: |
           curl -X POST \
-            -H "Accept: application/vnd.github.everest-preview+json" \
-            -H "Authorization: token $ARCHI_TOKEN" \
             https://api.github.com/repos/Lucas-Moreno/archi-project/actions/workflows/dockerhub-deploy-back.yml/dispatches \
-            -d '{"ref":"main", "inputs":{"input_key":"input_value"}}'
+            -H 'Accept: application/vnd.github.v3+json' \
+            -H 'Authorization: Bearer ${{ secrets.ARCHI_TOKEN }}' \
+            -d '{"ref":"main", "inputs": {"deploy_back_key": "true"}}'
