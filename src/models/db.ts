@@ -1,8 +1,16 @@
 import mongoose from 'mongoose'
 import process from 'process'
 import { MongooseModuleOptions } from '@nestjs/mongoose'
+import UserModel from './user.models'
+import dotenv from 'dotenv'
 
-const uri = `mongodb+srv://${process.env.NAME_DB}:${process.env.PASSWORD_DB}@cluster0.bqizz.mongodb.net/test-db?retryWrites=true&w=majority`
+dotenv.config();
+
+const uri = process.env.MONGO_URI
+
+if (!uri) {
+  throw new Error('MONGO_URI environment variable is not defined')
+}
 
 const options: MongooseModuleOptions = {
   useNewUrlParser: true,
@@ -22,3 +30,5 @@ mongoose.connect(
     }
   }
 )
+
+export { UserModel }
